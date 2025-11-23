@@ -11,18 +11,5 @@ prompt = (
         f"\nSIGNAL: [CALL / PUT / NO TRADE]"
         f"\nCONFIDENCE: [0-100%]"
         f"\nREASON: [List the 3 factors that confirmed this trade]"
-    if uploaded_file:
-        # Open the image
-        raw_image = Image.open(uploaded_file)
-        
-        # 1. Convert to RGB to avoid format errors
-        if raw_image.mode != 'RGB':
-            raw_image = raw_image.convert('RGB')
-            
-        # 2. Increase Contrast (Helps AI see faint candle wicks)
-        enhancer = ImageEnhance.Contrast(raw_image)
-        image = enhancer.enhance(1.2) # Increase contrast by 20%
-        
-        # Display the SHARPENED image
-        st.image(image, caption="Enhanced for AI Vision", use_container_width=True)
+   
     )
